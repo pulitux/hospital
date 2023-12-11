@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctores por Hospital</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<div data-role="page" id="create"></div>
+<div data-role="header"><h2>Doctores por HOspital</h2></div>
+<div data-role="content"></div>
+        <fieldset style ="border: 3px solid black; padding: 20px; color:black;">
+            <legend>Lista de Doctores</legend>
+                <table border="2" style="width:100%">
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>ESPECIALIDAD</th>
+                        <th>SALARIO</th>
+                    </tr>
+                    {% for id, num, name, esp, sal in lista_doctores%}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{esp}}</td>
+                            <td>{{sal}}</td>
+                        </tr>
+                   {% endfor%}
+                </table>
+        </fieldset>
+    <br></br>
+    <div style="text-align:center;">
+    <button onclick="window.location.href='index';">Listado</button>
+    <button onclick="window.location.href='alta';">Alta</button>
+    <button onclick="window.location.href='baja';">Baja</button>
+    <button onclick="window.location.href='modificar';">Modificar</button>
+    </div>
+
+</body>
+</html>
